@@ -2,10 +2,11 @@
 import socket
 import threading
 from flask import Flask, render_template, jsonify, request
+from flask_cors import CORS
 
 # instância do aplicativo Flask
 app = Flask(__name__)
-
+CORS(app,resources={r"/": {"origins": ""}})
 # Inicializa uma lista de mensagens e um conjunto para os usuários conectados
 messages = []
 connected_users = set()
